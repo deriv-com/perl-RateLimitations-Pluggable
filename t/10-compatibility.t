@@ -4,7 +4,6 @@ use Test::More;
 
 use Test::FailWarnings;
 
-use RateLimitations::Pluggable;
 
 my $current_time = 0;
 BEGIN {
@@ -12,6 +11,7 @@ BEGIN {
   *CORE::GLOBAL::time = sub() { $current_time; };
 }
 
+use RateLimitations::Pluggable;
 
 subtest "simple within_rate_limits" => sub {
     my $storage = {};
