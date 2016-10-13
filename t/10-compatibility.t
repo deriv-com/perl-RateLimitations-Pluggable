@@ -2,7 +2,6 @@ use strict;
 use warnings;
 use Test::More;
 
-use Test::MockTime qw(set_relative_time restore_time);
 use Test::FailWarnings;
 
 use RateLimitations::Pluggable;
