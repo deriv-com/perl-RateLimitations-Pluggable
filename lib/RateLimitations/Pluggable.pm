@@ -19,9 +19,11 @@ RateLimitations::Pluggable - pluggabel manager of per-service rate limitations
 =head1 STATUS
 
 =begin HTML
+
 <p>
     <a href="https://travis-ci.org/binary-com/perl-RateLimitations-Pluggable"><img src="https://travis-ci.org/binary-com/perl-RateLimitations-Pluggable.svg" /></a>
 </p>
+
 =end HTML
 
 =head1 SYNOPSIS
