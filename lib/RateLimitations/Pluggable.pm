@@ -10,7 +10,7 @@ our $VERSION = '0.01';
 
 =head1 NAME
 
-RateLimitations::Pluggable - pluggabel manager of per-service rate limitations
+RateLimitations::Pluggable - pluggabe manager of per-service rate limitations
 
 =head1 VERSION
 

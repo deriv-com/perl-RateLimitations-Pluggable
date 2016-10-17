@@ -1,6 +1,6 @@
 # NAME
 
-RateLimitations::Pluggable - pluggabel manager of per-service rate limitations
+RateLimitations::Pluggable - pluggabe manager of per-service rate limitations
 
 # VERSION
 
