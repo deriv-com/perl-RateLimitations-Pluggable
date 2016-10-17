@@ -38,7 +38,7 @@ RateLimitations::Pluggable - pluggabe manager of per-service rate limitations
 # DESCRIPTION
 
 The module access to build-in `time` function every time you invoke
-`within_rate_limits` method, and checks whether limis are hits or not.
+`within_rate_limits` method, and checks whether limits are hits or not.
 
 Each time the method `within_rate_limits` is invoked it appends
 to the array of hit current time. It check that array will not

@@ -57,7 +57,7 @@ RateLimitations::Pluggable - pluggabe manager of per-service rate limitations
 =head1 DESCRIPTION
 
 The module access to build-in C<time> function every time you invoke
-C<within_rate_limits> method, and checks whether limis are hits or not.
+C<within_rate_limits> method, and checks whether limits are hits or not.
 
 Each time the method C<within_rate_limits> is invoked it appends
 to the array of hit current time. It check that array will not
