@@ -140,34 +140,39 @@ sub BUILD {
             sort { $a->[0] <=> $b->[0] }
             map {
             my $seconds = $_;
+            my $limit   = $self->limits->{$service}->{$seconds};
+            [$seconds, $limit];
+            } keys %{$self->limits->{$service}};
 
+        # do various validations
+        for my $idx (0 .. @service_limits - 1) {
+            my $pair = $service_limits[$idx];
+            my ($seconds, $limit) = @$pair;
+
+            # validate: seconds should be natural number
             croak("'$seconds' seconds is not integer for service $service")
                 if $seconds - int($seconds) != 0;
-
             croak("'$seconds' seconds is not positive for service $service")
                 if $seconds <= 0;
 
-            my $limit = $self->limits->{$service}->{$seconds};
-
+            # validate: limit should be natural number
             croak("limit '$limit' is not integer for service $service")
                 if $limit - int($limit) != 0;
             croak("limit '$limit' is not positive for service $service")
                 if $limit <= 0;
 
-            [$seconds, $limit];
-            } keys %{$self->limits->{$service}};
-
-        # validate correctness: limit for greater time interval should be greater
-        for my $idx (1 .. @service_limits - 1) {
-            my $lesser_limit  = $service_limits[$idx - 1]->[1];
-            my $current_limit = $service_limits[$idx]->[1];
-            if ($current_limit <= $lesser_limit) {
-                croak "limit ($current_limit) for "
-                    . $current_limit->[0]
-                    . " seconds"
-                    . " should be greater then limit ($lesser_limit) for "
-                    . $service_limits[$idx - 1]->[0]
-                    . "seconds";
+            # validate: limit for greater time interval should be greater
+            if ($idx > 0) {
+                my $lesser_limit  = $service_limits[$idx - 1]->[1];
+                my $current_limit = $limit;
+                if ($current_limit <= $lesser_limit) {
+                    croak "limit ($current_limit) for "
+                        . $seconds
+                        . " seconds"
+                        . " should be greater then limit ($lesser_limit) for "
+                        . $service_limits[$idx - 1]->[0]
+                        . "seconds";
+                }
             }
         }
         $limits_for{$service} = \@service_limits;
