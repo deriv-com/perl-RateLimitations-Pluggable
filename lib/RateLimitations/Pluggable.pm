@@ -124,7 +124,7 @@ has setter => (
     required => 0,
     isa      => sub {
         croak "limits must be a coderef"
-            if defined($_[0]) && (ref($_[0]) // '') ne 'CODE';
+            if defined($_[0]) && (ref($_[0] ne 'CODE');
     },
 );
 
