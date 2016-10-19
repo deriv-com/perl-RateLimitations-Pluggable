@@ -151,13 +151,13 @@ sub BUILD {
 
             # validate: seconds should be natural number
             croak("'$seconds' seconds is not integer for service $service")
-                if $seconds - int($seconds) != 0;
+                if $seconds != int($seconds);
             croak("'$seconds' seconds is not positive for service $service")
                 if $seconds <= 0;
 
             # validate: limit should be natural number
             croak("limit '$limit' is not integer for service $service")
-                if $limit - int($limit) != 0;
+                if $limit != int($limit);
             croak("limit '$limit' is not positive for service $service")
                 if $limit <= 0;
 
