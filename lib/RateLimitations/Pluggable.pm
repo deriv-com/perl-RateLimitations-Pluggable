@@ -182,7 +182,9 @@ sub BUILD {
 
 =head1 METHODS
 
-=head2 within_rate_limits($service, $consumer)
+=head2 within_rate_limits
+
+ within_rate_limits($service, $consumer)
 
 Appends service/consumer hits array with additional hit.
 
