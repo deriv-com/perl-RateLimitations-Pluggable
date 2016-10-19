@@ -163,14 +163,15 @@ sub BUILD {
 
             # validate: limit for greater time interval should be greater
             if ($idx > 0) {
-                my $lesser_limit  = $service_limits[$idx - 1]->[1];
+                my $prev_pair = $service_limits[$idx - 1]->[1]
+                my $lesser_limit  = $prev_pair->[1];
                 my $current_limit = $limit;
                 if ($current_limit <= $lesser_limit) {
                     croak "limit ($current_limit) for "
                         . $seconds
                         . " seconds"
                         . " should be greater then limit ($lesser_limit) for "
-                        . $service_limits[$idx - 1]->[0]
+                        . $prev_pair->[0]
                         . "seconds";
                 }
             }
