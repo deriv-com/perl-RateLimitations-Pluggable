@@ -12,7 +12,7 @@ perl:
     - "5.12"
     - "5.10"
 before_install:
-    - cpanm --installdeps .
+    - cpanm -nq --installdeps .
     - perl -V
 
 script:
