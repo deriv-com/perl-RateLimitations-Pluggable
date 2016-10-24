@@ -1,5 +1,4 @@
 [![Build Status](https://travis-ci.org/binary-com/perl-RateLimitations-Pluggable.svg?branch=master)](https://travis-ci.org/binary-com/perl-RateLimitations-Pluggable)
-[![Coverage Status](https://coveralls.io/repos/github/binary-com/perl-RateLimitations-Pluggable/badge.svg?branch=master)](https://coveralls.io/github/binary-com/perl-RateLimitations-Pluggable?branch=master)
 [![codecov](https://codecov.io/gh/binary-com/perl-RateLimitations-Pluggable/branch/master/graph/badge.svg)](https://codecov.io/gh/binary-com/perl-RateLimitations-Pluggable)
 
 # NAME

@@ -20,4 +20,4 @@ script:
     perl Makefile.PL && PERL5OPT=-MDevel::Cover make test
 after_success:
   - cover -report codecov
-  - cover -report coveralls
+
