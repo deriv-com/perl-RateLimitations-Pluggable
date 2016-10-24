@@ -10,8 +10,12 @@ WriteMakefile(
                 "ExtUtils::MakeMaker" => "6.64",
             },
             BUILD_REQUIRES => {
-                'Test::More'         => 0,
-                'Test::FailWarnings' => 0,
+                'Test::More'                      => 0,
+                'Test::FailWarnings'              => 0,
+                'Devel::Cover'                    => '1.23',
+                'Devel::Cover::Report::Coveralls' => '0.11',
+                'Devel::Cover::Report::Codecov'   => '0.14',
+
             },
             PREREQ_PM => {
               'Moo' => 0,
@@ -19,10 +23,13 @@ WriteMakefile(
         ) : (
             PREREQ_PM => {
                 "ExtUtils::MakeMaker" => '6.64',
-                'Test::More'          => 0,
-                'Test::FailWarnings'  => 0,
-                'Moo'                 => 0,
-            },
+                'Test::More'                       => 0,
+                'Test::FailWarnings'               => 0,
+                'Moo'                              => 0,
+                 'Devel::Cover'                    => '1.23',
+                 'Devel::Cover::Report::Coveralls' => '0.11',
+                 'Devel::Cover::Report::Codecov'   => '0.14',
+                         },
         )
     ),
     ( eval { ExtUtils::MakeMaker->VERSION(6.31) } ? (LICENSE => 'perl') : ()),

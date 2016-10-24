@@ -11,9 +11,13 @@ perl:
     - "5.14"
     - "5.12"
     - "5.10"
+env: CODECOV_TOKEN=651316b3-f2f6-40fa-babc-13e07893b94a
 before_install:
     - cpanm --installdeps .
     - perl -V
 
 script:
-    perl Makefile.PL && make test
+    perl Makefile.PL && PERL5OPT=-MDevel::Cover make test
+after_success:
+  - cover -report codecov
+  - cover -report coveralls
