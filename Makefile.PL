@@ -11,10 +11,7 @@ WriteMakefile(
     TEST_REQUIRES => {
         'Test::More'                      => 0,
         'Test::FailWarnings'              => 0,
-        'Devel::Cover'                    => '1.23',
-        'Devel::Cover::Report::Coveralls' => '0.11',
-        'Devel::Cover::Report::Codecov'   => '0.14',
-    },
+      },
     PREREQ_PM => {
         'Moo' => 0,
     },

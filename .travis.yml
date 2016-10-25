@@ -14,6 +14,8 @@ perl:
 before_install:
     - cpanm -nq --installdeps .
     - perl -V
+    - cpanm -qn Test::Requires::Git
+    - cpanm -qn Devel::Cover::Report::Codecov
 
 script:
     perl Makefile.PL && PERL5OPT=-MDevel::Cover make test
