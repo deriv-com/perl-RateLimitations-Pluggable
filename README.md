@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/binary-com/perl-RateLimitations-Pluggable.svg?branch=master)](https://travis-ci.org/binary-com/perl-RateLimitations-Pluggable)
+[![codecov](https://codecov.io/gh/binary-com/perl-RateLimitations-Pluggable/branch/master/graph/badge.svg)](https://codecov.io/gh/binary-com/perl-RateLimitations-Pluggable)
+
 # NAME
 
 RateLimitations::Pluggable - pluggabe manager of per-service rate limitations

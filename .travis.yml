@@ -12,8 +12,13 @@ perl:
     - "5.12"
     - "5.10"
 before_install:
-    - cpanm --installdeps .
+    - cpanm -nq --installdeps .
     - perl -V
+    - cpanm -qn Test::Requires::Git
+    - cpanm -qn Devel::Cover::Report::Codecov
 
 script:
-    perl Makefile.PL && make test
+    perl Makefile.PL && PERL5OPT=-MDevel::Cover make test
+after_success:
+  - cover -report codecov
+
