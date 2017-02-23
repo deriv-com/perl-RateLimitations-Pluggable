@@ -128,6 +128,10 @@ has setter => (
 # value: sorted by $seconds array of pairs [$seconds, $rate]
 has _limits_for => (is => 'rw');
 
+=for Pod::Coverage BUILD getter setter
+
+=cut
+
 sub BUILD {
     my $self = shift;
     my %limits_for;
@@ -174,7 +178,7 @@ sub BUILD {
         }
         $limits_for{$service} = \@service_limits;
     }
-    $self->_limits_for(\%limits_for);
+    return $self->_limits_for(\%limits_for);
 }
 
 =head1 METHODS
