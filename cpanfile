@@ -5,8 +5,7 @@ on configure => sub {
     requires 'ExtUtils::MakeMaker', '6.64';
 };
 
-on build => sub {
-    requires 'ExtUtils::MakeMaker';
+on test => sub {
     requires 'Test::FailWarnings';
     requires 'Test::More';
 };
